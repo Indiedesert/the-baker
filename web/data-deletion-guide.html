@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Learn how to delete your data from The Baker app. Step-by-step guide for managing and removing your personal information.">
+    <title>Delete Your Data | The Baker App</title>
+    <style>
+        :root {
+            --color-primary: #D4A373;
+            --color-primary-dark: #B8956A;
+            --color-background: #FEFAE0;
+            --color-surface: #FFFFFF;
+            --color-text: #2C2C2C;
+            --color-text-muted: #6B6B6B;
+            --color-accent: #E9EDC9;
+            --color-danger: #BC4749;
+            --color-danger-light: #FDF0F0;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px 20px 48px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 32px 0 40px;
+            border-bottom: 1px solid var(--color-accent);
+            margin-bottom: 40px;
+        }
+
+        .logo-image {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 12px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .app-name {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .header-subtitle {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+        }
+
+        /* Sections */
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--color-text);
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 32px 0 16px;
+            color: var(--color-text);
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--color-text-muted);
+        }
+
+        /* Info Card */
+        .info-card {
+            background: var(--color-surface);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .info-card h2 {
+            margin-top: 0;
+        }
+
+        /* Steps */
+        .steps {
+            counter-reset: step;
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        .step {
+            background: var(--color-surface);
+            border-radius: var(--radius-md);
+            padding: 20px 20px 20px 72px;
+            margin-bottom: 16px;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .step:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            background: var(--color-primary);
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+            color: var(--color-text);
+        }
+
+        .step-description {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Screenshot Placeholder */
+        .screenshot-placeholder {
+            background: var(--color-accent);
+            border: 2px dashed var(--color-primary);
+            border-radius: var(--radius-sm);
+            padding: 32px 20px;
+            text-align: center;
+            margin: 16px 0;
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        .screenshot-placeholder .icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* Options Card */
+        .options {
+            display: grid;
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .option {
+            background: var(--color-surface);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            border-left: 4px solid var(--color-primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .option.danger {
+            border-left-color: var(--color-danger);
+            background: var(--color-danger-light);
+        }
+
+        .option-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .option-title .icon {
+            font-size: 1.25rem;
+        }
+
+        .option p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Data List */
+        .data-list {
+            list-style: none;
+            margin: 16px 0;
+        }
+
+        .data-list li {
+            padding: 10px 0 10px 28px;
+            position: relative;
+            border-bottom: 1px solid var(--color-accent);
+            color: var(--color-text-muted);
+        }
+
+        .data-list li:last-child {
+            border-bottom: none;
+        }
+
+        .data-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        /* Alert Box */
+        .alert {
+            background: var(--color-danger-light);
+            border-left: 4px solid var(--color-danger);
+            border-radius: var(--radius-sm);
+            padding: 16px 20px;
+            margin: 24px 0;
+        }
+
+        .alert-title {
+            font-weight: 600;
+            color: var(--color-danger);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .alert p {
+            margin: 0;
+            color: var(--color-text);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--color-accent);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            text-align: center;
+            margin: 40px 0 24px;
+        }
+
+        .contact h2 {
+            margin-top: 0;
+        }
+
+        .contact a {
+            color: var(--color-primary-dark);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 24px 0;
+            border-top: 1px solid var(--color-accent);
+            margin-top: 40px;
+        }
+
+        .footer a {
+            color: var(--color-primary-dark);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            margin-top: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .container {
+                padding: 16px 16px 40px;
+            }
+
+            .header {
+                padding: 24px 0 32px;
+            }
+
+            .app-name {
+                font-size: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .step {
+                padding: 16px 16px 16px 64px;
+            }
+
+            .step::before {
+                left: 16px;
+                width: 32px;
+                height: 32px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <img src="icons/Icon-192.png" alt="The Baker App Icon" class="logo-image">
+            <h1 class="app-name">The Baker</h1>
+            <p class="header-subtitle">Data Deletion Guide</p>
+        </header>
+
+        <!-- Introduction -->
+        <section class="info-card">
+            <h2>Managing Your Data</h2>
+            <p>
+                Your privacy matters to us. The Baker gives you full control over your data.
+                This guide explains how to export or permanently delete your information directly from the app.
+            </p>
+        </section>
+
+        <!-- Step by Step Instructions -->
+        <h2>How to Delete Your Data</h2>
+        <p>Follow these steps to access data management options in The Baker app:</p>
+
+        <ol class="steps">
+            <li class="step">
+                <div class="step-title">Open The Baker App</div>
+                <p class="step-description">Launch the app on your device.</p>
+            </li>
+
+            <li class="step">
+                <div class="step-title">Go to Settings</div>
+                <p class="step-description">Tap the gear icon (⚙️) or navigate to the Settings page from the main menu.
+                </p>
+                <div class="screenshot-placeholder">
+                    <span class="icon">📱</span>
+                    Screenshot: Settings Navigation
+                </div>
+            </li>
+
+            <li class="step">
+                <div class="step-title">Find the Privacy Section</div>
+                <p class="step-description">Scroll down to locate the "Privacy" section in Settings.</p>
+            </li>
+
+            <li class="step">
+                <div class="step-title">Tap "Privacy Settings"</div>
+                <p class="step-description">This opens the data management page where you can export or delete your
+                    data.</p>
+                <div class="screenshot-placeholder">
+                    <span class="icon">📱</span>
+                    Screenshot: Privacy Settings Page
+                </div>
+            </li>
+
+            <li class="step">
+                <div class="step-title">Choose Your Action</div>
+                <p class="step-description">Select one of the following options:</p>
+                <div class="options">
+                    <div class="option">
+                        <div class="option-title"><span class="icon">📥</span> Export My Data</div>
+                        <p>Download a copy of your recipes and settings in JSON format before deletion.</p>
+                    </div>
+                    <div class="option danger">
+                        <div class="option-title"><span class="icon">🗑️</span> Delete Account</div>
+                        <p>Permanently delete your account and all associated data from our servers and your device.</p>
+                    </div>
+                </div>
+            </li>
+
+            <li class="step">
+                <div class="step-title">Confirm Deletion</div>
+                <p class="step-description">When prompted, confirm that you want to permanently delete your data. This
+                    action cannot be undone.</p>
+            </li>
+        </ol>
+
+        <!-- Warning -->
+        <div class="alert">
+            <div class="alert-title">⚠️ Important</div>
+            <p>Account deletion is permanent and cannot be undone. We recommend exporting your data first if you want to
+                keep a backup of your recipes.</p>
+        </div>
+
+        <!-- What Gets Deleted -->
+        <section class="info-card">
+            <h2>What Gets Deleted</h2>
+            <p>When you delete your account, the following data is permanently removed:</p>
+            <ul class="data-list">
+                <li>Your saved recipes and customizations</li>
+                <li>App settings and preferences</li>
+                <li>Your account profile information</li>
+                <li>Authentication tokens and session data</li>
+                <li>Any data stored on our servers</li>
+            </ul>
+        </section>
+
+        <!-- Privacy Note -->
+        <section class="info-card">
+            <h2>Our Privacy-First Approach</h2>
+            <p>
+                The Baker is designed with privacy in mind. Most of your data (recipes, timers, settings)
+                is stored <strong>locally on your device</strong> — we don't have access to it.
+            </p>
+            <p>
+                We use Firebase services for crash reporting and basic analytics to improve the app.
+                These collect only anonymous identifiers, not personal information.
+            </p>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact">
+            <h2>Need Help?</h2>
+            <p>
+                If you have any questions about your data or need assistance,
+                please contact us at:<br>
+                <a href="mailto:support@indiedesert.com">support@indiedesert.com</a>
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <p class="footer-note">© 2026 The Baker. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
