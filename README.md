@@ -76,8 +76,8 @@ Calculate hydration, scale recipes up or down, and convert ingredients with ease
 
 The Baker is designed with privacy in mind. Most of your data is stored **locally on your device** — we don't have access to it.
 
-- [Privacy Policy](PRIVACY_POLICY.md)
-- [Data Deletion Guide](web/data-deletion-guide.html)
+- [Privacy Policy](https://indiedesert.github.io/the-baker/web/privacy-policy.html)
+- [Data Deletion Guide](https://indiedesert.github.io/the-baker/web/data-deletion-guide.html)
 
 ---
 
