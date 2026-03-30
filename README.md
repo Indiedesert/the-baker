@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://play.google.com/store/apps/details?id=dev.fluttercommunity.the_baker">
+  <a href="https://play.google.com/store/apps/details?id=com.indiedesert.thebaker">
     <img src="https://img.shields.io/badge/Google_Play-Download-green?style=for-the-badge&logo=google-play" alt="Get it on Google Play">
   </a>
 </p>
@@ -65,7 +65,7 @@ Calculate hydration, scale recipes up or down, and convert ingredients with ease
 ## 📥 Download
 
 <p align="center">
-  <a href="https://play.google.com/store/apps/details?id=dev.fluttercommunity.the_baker">
+  <a href="https://play.google.com/store/apps/details?id=com.indiedesert.thebaker">
     <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="250">
   </a>
 </p>
