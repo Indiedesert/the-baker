@@ -34,11 +34,11 @@ The Baker is your personal baking companion, designed to help you create perfect
 <p align="center">
   <img src="web/images/recipe.webp" alt="Recipe List" width="200">
   &nbsp;&nbsp;
-  <img src="store_assets/screenshots/02_recipe_detail_light.png" alt="Recipe Detail" width="200">
+  <img src="web/images/recipe_detail.webp" alt="Recipe Detail" width="200">
   &nbsp;&nbsp;
-  <img src="store_assets/screenshots/03_timer_light.png" alt="Timer" width="200">
+  <img src="web/images/timer.webp" alt="Timer" width="200">
   &nbsp;&nbsp;
-  <img src="store_assets/screenshots/04_calculator_light.png" alt="Calculator" width="200">
+  <img src="web/images/hydration_calc.webp" alt="Calculator" width="200">
 </p>
 
 ---
