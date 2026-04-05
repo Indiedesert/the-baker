@@ -32,7 +32,7 @@ The Baker is your personal baking companion, designed to help you create perfect
 ## 📱 Screenshots
 
 <p align="center">
-  <img src="store_assets/screenshots/01_recipes_light.png" alt="Recipe List" width="200">
+  <img src="web/images/recipe.webp" alt="Recipe List" width="200">
   &nbsp;&nbsp;
   <img src="store_assets/screenshots/02_recipe_detail_light.png" alt="Recipe Detail" width="200">
   &nbsp;&nbsp;
